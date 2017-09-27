@@ -1,0 +1,114 @@
+{
+  "basics": {
+    "name": "윤선중, SunJoong Yoon",
+    "label": "Solution Programmer",
+    "picture": "",
+    "email": "photo9609@gmail.com",
+    "phone": "010-7129-3178",
+    "website": "",
+    "summary": "성능을 중요하게 생각하고 아키텍처를 고민하는 개발자입니다",
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "Canceryoon",
+        "url": "https://www.github.com/canceryoon"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Pentasecurity",
+      "position": "Programmer",
+      "website": "https://www.pentasecurity.com/",
+      "startDate": "2014-09-01",
+      "endDate": "~",
+      "summary": "BLANK",
+      "highlights": [
+         "BLANK"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "keywords": [
+        "C",
+        "C++"
+      ]
+    },
+    {
+      "name": "Database",
+      "keywords": [
+        "MySQL",
+        "MariaDB",
+        "Altibase",
+        "Postgresql"
+      ]
+    },
+    {
+      "name": "Deployment",
+      "keywords": [
+        "AWS EC2",
+        "AWS CodeDeploy",
+        "nginx"
+      ]
+    },
+    {
+      "name": "Tools",
+      "keywords": [
+        "vim",
+        "git",
+		"svn",
+		"Jenkins",
+		"Coverity"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Korean",
+      "fluency": "Native Speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Middle to lower grade"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Game",
+      "keywords": [
+        "LOL",
+        "Overwatch"
+      ]
+    },
+    {
+      "name": "Music",
+      "keywords": [
+        "Band",
+        "Guitar",
+		"Drum",
+		"OneRepublic"
+      ]
+    },
+    {
+      "name": "커피",
+      "keywords": [
+        "Ethiopia Yirgacheffe Abaya G2",
+		"Ethiopia Sidamo Gugi Oddo Shakisso"
+		"Hand-Drip",
+		"Dutch coffee"
+      ]
+    },
+    {
+      "name": "Recently Reading",
+      "keywords": [
+        "표백",
+        "COFFEE INSIDE",
+        "MySQL Internals",
+		"클린 코드"
+      ]
+    }
+  ],
+  "references": []
+}
