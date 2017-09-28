@@ -782,7 +782,7 @@ ul.courses li:hover {
                                                              </span>
                                                       </div>
                                                 </header>
-                                                <div class="item display" style="opacity:0">
+                                                <div class="item display none" style="opacity:0">
                                                       <div class="summary">
                                                             <p><p>안경을 착용하는 사람들이 많고 그들의 공통된 고민이 '나한테 이 안경이 어울리까?' 라는 것이라고 생각했습니다. 그래서 일일이 하나씩 다 착용해보지 않고 스마트폰 카메라를 이용해서 사람을 인식하고 임의로 안경을 착용한 모습을 보여주는 SmartGlasses 를 기획 및 개발했습니다.</p></p>
                                                       </div>
@@ -802,7 +802,7 @@ ul.courses li:hover {
                                                              </span>
                                                       </div>
                                                 </header>
-                                                <div class="item display" style="opacity:0">
+                                                <div class="item display none" style="opacity:0">
                                                       <div class="summary">
                                                             <p><p>편의점 상비약이 처음 도입되고 잘못된 오남용 처방이 사회적 문제가 될때였습니다. 어떻게하면 이런 잘못된 처방을 줄일수 있을까 고민을하다가 스마트폰+Web 동시에 지원가능한 webapp 형태로 GPS 값을 받아 근처 편의점과 편의점 상비약의 성분, 효능 및 부작용에 대한 정보를 알려주는 서비스를 기획 및 개발했습니다. </p></p>
                                                       </div>
@@ -822,7 +822,7 @@ ul.courses li:hover {
                                                              </span>
                                                       </div>
                                                 </header>
-                                                <div class="item display" style="opacity:0">
+                                                <div class="item display none" style="opacity:0">
                                                       <div class="summary">
                                                             <p><p>!Tetris  3호선  WhoIS?  DamoTalk  </p></p>
                                                       </div>
@@ -916,6 +916,45 @@ ul.courses li:hover {
 				</section>
 
 		</div>
+		<script>
+			(function(){
+				var elements = document.querySelector("#resume");
+				// adding the element to the all container
+				// and using event delegation
+				elements.addEventListener("click", function(e) {
+					var current = e.target;
+					// font awesone arrows
+					var arrowRight = current.classList.contains('fa-caret-right');
+					var arrowDown = current.classList.contains('fa-caret-down');
+					if(current && current.nodeName == "SPAN" && (arrowRight || arrowDown)) {
+						var header = e.target.parentNode.parentNode;
+						var item = header.nextSibling;
+						// select the .item element from the siblings
+						while (!item || !item.classList || !item.classList.contains('item')) {
+							item = item.nextSibling;
+						}
+						// hide or show the .item element
+						item.classList.toggle('none');
+						// if the .item is going to be shown then imcrease is opacity
+						// every 20 milliseconds to make a fadeIn effect
+						if (!item.classList.contains('none')) {
+							var id = setInterval(function() {
+								item.style.opacity = parseFloat(item.style.opacity) + 0.09;
+								if (parseFloat(item.style.opacity) >= 1) {
+									clearInterval(id);
+								}
+							}, 20);
+						} else {
+							item.style.opacity = 0;
+						}
+						current.classList.toggle('fa-caret-right');
+						current.classList.toggle('fa-caret-down');
+					}
+				}, false);
+				// Make the #resume visible only when the DOM is fully loaded
+				elements.style.opacity = '1';
+			})();
+		</script>
 	</body>
 
 </html>
