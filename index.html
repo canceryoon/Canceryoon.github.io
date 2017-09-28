@@ -680,15 +680,14 @@ ul.courses li:hover {
 			
 							<div class="item display" style="opacity: 1.08;">
 									<div class="summary">
-										<p></p><p> MySQL/MariaDB Storage Engine Layer 에서 사용자가 지정한 특정 데이터베이스의 특정 테이블의 컬럼 단위로 암호화 및 IP/User 기반 접근제어를 하는 솔루션을 개발했습니다 </p><p></p>
+										<p></p><p> MySQL/MariaDB Storage Engine Layer 에서 사용자가 지정한 USER:DATABASE:TABLE:COLUMN 단위로 암호화 및 IP/User 기반 접근제어를 하는 솔루션을 개발했습니다 </p><p></p>
 									</div>
 									<ul class="highlights">
-										<li><p>오픈소스의 장점을 이용해 MySQL/MariaDB Storage Layer 에 커스텀 엔진을 개발했습니다</p></li>
-										<li><p>CLI 기반 관리도구를 이용하여 설정하고 사용자의 실제 데이터베이스 쿼리의 변경 없도록 개발했습니다</p></li>
-										<li><p>주언어 c++ 로 진행했으며 Linux/Windows 멀티플랫폼으로 개발했습니다</p></li>
-										<li><p>외부 라이브러리로 openssl, boost 를 사용했으며 필요부분만 컴파일하여 개발했습니다</p></li>
-										<li><p>후에 MySQL/MaraiDB 개발 경험을 살려 Percona, Postgresql, Altibase, Tibero 도 진행했습니다</p></li>
+										<li><p>오픈소스 DATABASE 인 MySQL/MariaDB 의 Storage Layer 에 커스텀 암호화 엔진과 암호화 설정 및 현재 Status 를 보여줄수있는 CLI 기반 관리도구를 개발했습니다</p></li>
+										<li><p>주언어 c++ 로 진행했으며 Linux/Windows 멀티플랫폼으로 개발하며 openssl, boost 의 필요부분만 컴파일하여 사용했으며 openssl 의 취약점 뉴스를 확인하여 매번 패치를 진행했습니다</p></li>										<li><p>외부 라이브러리로 openssl, boost 의 필요부분만 컴파일하여 사용했으며 openssl 의 취약점 뉴스를 확인하여 매번 패치를 진행했습니다.</p></li>
+										<li><p>사용자가 느끼기에 암호화는 되지만 쿼리변경이라던가 사용자가 운영하는 서비스의 변경작업이 발생하면 안된다고 판단하여 Storage engine 에서 전부 동작하도록 오픈소스를 이용해서 개발했습니다 </p></li>
 										<li><p>성능 향상을 위해 여러 데이터구조 및 알고리즘을 적용 시켰고, OS 최적화를 위한 작업도 진행했습니다</p></li>
+										<li><p>후에 MySQL/MaraiDB 개발 경험을 살려 Percona, Postgresql, Altibase, Tibero 도 진행했습니다</p></li>
 										<li><p><a target='_blank' href='https://mydiamo.com/'>MyDiamo</a>  제가 개발한 솔루션 해외 버전입니다 </p></li>
 									</ul>
 							</div>
@@ -762,7 +761,7 @@ ul.courses li:hover {
                                                 </header>
 						<div class="item display" style="opacity:1">
 						      <div class="summary">
-							    <p><p><a target='_blank' href='http://www.cyberdefensemagazine.com/2016-cdm-infosec-award-winners/'>CDM INFOSEC Awards</a>  제가 개발한 MyDiamo 가 Cyber Defense Magazine Announces 2016 CDM INFOSEC Awards - Data Leakage Prevention (DLP) 수상했습니다</p></p>
+							    <p><p> Database Encrypt Solution 인 MyDiamo 가 2016 CDM INFOSEC - DLP (Data Leakage Prevention) 부분을 수상했습니다. <a target='_blank' href='http://www.cyberdefensemagazine.com/2016-cdm-infosec-award-winners/'>CDM INFOSEC Awards</a></p></p>
 						      </div>
 						</div>
                                                 <header class="clear">
@@ -783,9 +782,9 @@ ul.courses li:hover {
                                                              </span>
                                                       </div>
                                                 </header>
-                                                <div class="item display" style="opacity:1">
+                                                <div class="item display" style="opacity:0">
                                                       <div class="summary">
-                                                            <p><p>스마트폰 카메라로 사람 얼굴을 인식하여 여러 안경들을 미리 착용해보고 어울리는지 확인 할수 있는 SmartGlagesses 를 기획 및 개발했습니다.</p></p>
+                                                            <p><p>안경을 착용하는 사람들이 많고 그들의 공통된 고민이 '나한테 이 안경이 어울리까?' 라는 것이라고 생각했습니다. 그래서 일일이 하나씩 다 착용해보지 않고 스마트폰 카메라를 이용해서 사람을 인식하고 임의로 안경을 착용한 모습을 보여주는 SmartGlasses 를 기획 및 개발했습니다.</p></p>
                                                       </div>
                                                 </div>
                                                 <header class="clear">
@@ -803,9 +802,9 @@ ul.courses li:hover {
                                                              </span>
                                                       </div>
                                                 </header>
-                                                <div class="item display" style="opacity:1">
+                                                <div class="item display" style="opacity:0">
                                                       <div class="summary">
-                                                            <p><p>My Pill 이라는 webapp 형태로 자신의 GPS 값을 기준으로 근처 상비약을 구할수있는 편의점을 찾아주는 서비스를 기획 및 개발했습니다. </p></p>
+                                                            <p><p>편의점 상비약이 처음 도입되고 잘못된 오남용 처방이 사회적 문제가 될때였습니다. 어떻게하면 이런 잘못된 처방을 줄일수 있을까 고민을하다가 스마트폰+Web 동시에 지원가능한 webapp 형태로 GPS 값을 받아 근처 편의점과 편의점 상비약의 성분, 효능 및 부작용에 대한 정보를 알려주는 서비스를 기획 및 개발했습니다. </p></p>
                                                       </div>
                                                 </div>
                                                 <header class="clear">
@@ -823,7 +822,7 @@ ul.courses li:hover {
                                                              </span>
                                                       </div>
                                                 </header>
-                                                <div class="item display" style="opacity:1">
+                                                <div class="item display" style="opacity:0">
                                                       <div class="summary">
                                                             <p><p>!Tetris  3호선  WhoIS?  DamoTalk  </p></p>
                                                       </div>
