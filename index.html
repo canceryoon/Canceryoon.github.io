@@ -685,14 +685,58 @@ ul.courses li:hover {
 					        <div class="summary">
 					            <p></p><p> MySQL/MariaDB Storage Engine Layer 에서 사용자가 지정한 USER:DATABASE:TABLE:COLUMN 단위로 암호화 및 IP/User 기반 접근제어를 하는 솔루션을 개발했습니다 </p><p></p>
 						</div>
-						<ul class="highlights">
-					            <li><p>오픈소스 DATABASE 인 MySQL/MariaDB 의 Storage Engine Layer 에 커스텀 암호화 엔진과 암호화 설정 및 현재 Status 를 보여줄수있는 CLI 기반 관리도구를 개발했습니다</p></li>
-						    <li><p>주언어 c++ 로 개발하며 Linux/Windows 멀티플랫폼을 지원하고 openssl, boost 의 필요부분만 컴파일하여 사용했습니다. openssl 의 취약점 뉴스를 확인하여 매번 패치를 진행했습니다</p></li>
-						    <li><p>사용자가 느끼기에 암호화는 되지만 쿼리변경이라던가 사용자가 운영하는 서비스의 변경작업이 발생하면 안된다고 판단하여 Storage engine 에서 전부 동작하도록 오픈소스를 이용해서 개발했습니다 </p></li>
-						    <li><p>성능 향상을 위해 여러 데이터구조 및 알고리즘을 적용 시켰고, OS 최적화를 위한 작업도 진행했습니다</p></li>
-						    <li><p>후에 MySQL/MaraiDB 개발 경험을 살려 Percona, Postgresql, Altibase, Tibero 도 진행했습니다</p></li>
-						    <li><p><a target='_blank' href='https://mydiamo.com/'>MyDiamo</a>  제가 개발한 솔루션 해외 버전입니다 </p></li>
-						</ul>
+						<details open>
+								<summary><span style="font-weight:bold; line-height: 25px;">1. 주요 내용</span></summary>
+								<ul class="highlights">
+									<li><p>오픈소스 DATABASE 인 MySQL/MariaDB 의 Storage Engine Layer 에 커스텀 암호화 엔진과 암호화 설정 및 현재 Status 를 보여줄수있는 CLI 기반 관리도구를 개발했습니다</p></li>
+									<li><p>주언어 c++ 로 개발하며 Linux/Windows 멀티플랫폼을 지원하고 openssl, boost 의 필요부분만 컴파일하여 사용했습니다. openssl 의 취약점 뉴스를 확인하여 매번 패치를 진행했습니다</p></li>
+									<li><p>사용자가 느끼기에 암호화는 되지만 쿼리변경이라던가 사용자가 운영하는 서비스의 변경작업이 발생하면 안된다고 판단하여 Storage engine 에서 전부 동작하도록 오픈소스를 이용해서 개발했습니다 </p></li>
+									<li><p>성능 향상을 위해 여러 데이터구조 및 알고리즘을 적용 시켰고, OS 최적화를 위한 작업도 진행했습니다</p></li>
+									<li><p>후에 MySQL/MaraiDB 개발 경험을 살려 Percona, Postgresql, Altibase, Tibero 도 진행했습니다</p></li>
+									<li><p><a target='_blank' href='https://mydiamo.com/'>MyDiamo</a>  개발한 솔루션 해외 버전입니다 </p></li>
+								</ul>
+								</br>
+							</details>
+							<details>
+								<summary><span style="font-weight:bold; line-height: 25px;">2. Performance TFT</span></summary>
+								<ul class="highlights">
+									<li><p>솔루션의 성능이 MySQL 적용전 대비 현저하게 저하되는것을 확인하여 솔루션의 아키텍쳐 대변경 하는 TFT 를 진행했습니다.</p></li>
+									<li><p>Linux/Windows Process 간의 정보 전달이 필요하여 IPCInterface 를 구현했습니다.</p></li>
+									<li><p>Linux  : SHM, MQ</p></li>
+									<li><p>Winodws: MMF, MSG</p></li>
+									<li><p>탐색 효율을 높이기 위해서 Multi-HashTable 과 BSearch 를 구현하여 사용헀습니다.</p></li>
+									<li><p>로그의 효율을 위해 thread 와 Circular-Queue 를 구현하여 사용했습니다. </p></li>
+									<li><p>아키텍쳐를 개선 하는 방식 외적으로 성능개선에 도움되는 코딩 방식으로 전면 수정했습니다. </p></li>
+									<li><p>성능 개선을 통하여 Pure-MySQL 대비 약 2% 저하까지 향상 시켰습니다.</p></li>
+								</ul>
+							</details>
+							<details>
+								<summary><span style="font-weight:bold; line-height: 25px;">3. MySQL INNODB</span></summary>
+								<ul class="highlights">
+									<li><p>MySQL InnoDB 가 자체적으로 지원하는 기능을 솔루션에 적용했습니다. </p></li>
+									<li><p>Index 지원을 위해 InnoDB-CharacterSet 의 아키텍쳐를 분석&수정하여 제품에 적용했습니다. </p></li>
+									<li><p>Replication 환경의 Binlog 작성 부분을 분석하여 솔루션에서 암호화한 데이터는 Binlog 에서도 암호화 유지되도록 적용했습니다.</p></li>
+									<li><p>Storage Engine 의 기능 중 하나인 Partition Storage 를 위해 InnoDB-Partition 을 분석하여 적용했습니다. </p></li>
+								</ul>
+							</details>
+							<details>
+								<summary><span style="font-weight:bold; line-height: 25px;">4. OS 최적화 및 종속성</span></summary>
+								<ul class="highlights">
+									<li><p>Linux 와 DB 자체 종속성 줄이기 위한 작업을 진행했습니다.</p></li>
+									<li><p>Redhat 계열의 OS Permission Software 인 SELinux 와 Debian 계열의 OS Permission Software 인 APPAromr 가 기본적으로 MySQL 을 제어하여 솔루션의 자체 권한도 추가로 부여하였습니다. </p></li>
+									<li><p>OSS DB 이다보니 고객이 직접 Build install 진행 시 종속성 문제가 많았습니다. </p></li>
+									<li><p>이 종속성 문제를 위햇 Storage Engine 의 옵션을 전부 제거 및 라이브러리를 static 화 했습니다. </p></li>
+								</ul>
+							</details>
+							<details>
+								<summary><span style="font-weight:bold; line-height: 25px;">5. Test</span></summary>
+								<ul class="highlights">
+									<li><p>build 마다 gtest 를 통하여 최소 함수 단위의 unit test 를 설정했습니다.</p></li>
+									<li><p>Jenkins 를 이용하여 데일리 자동빌드 및 전체 솔루션의 테스트 범위를 70% 유지했습니다. </p></li>
+									<li><p>Coverity 를 이용하여 critical, medium 잠재 버그를 0 로 유지했습니다.</p></li>
+									<li><p>전체 솔루션 릴리즈시 지원기능의 화이트리스트를 위해 shell/python 기반의 test 자동화를 구현했습니다.</p></li>
+								</ul>
+							</details>
 				            </div>
 			
 					</section>
