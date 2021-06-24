@@ -604,7 +604,7 @@ ul.courses li:hover {
 
 					<section class="section main-summary">
 						<section>
-							<div><p>"모르는 코드는 있어도 이해 못할 코드는 없다" 라는 생각을 갖고 있는 이것저것 좋아하는 개발자입니다.<br>개발 언어도 중요하지만 언어보다 로직을 더 중요하게 생각합니다.<br>제 생활에 밀접하게 도움되는 편이한 서비스를 만드는것을 좋아합니다.<br>그래서 세상 많은 사람들에게 편이한 서비스, 프로그램을 제공하여 다 같이 편이해지고 싶은 꿈을 갖고 있는 개발자입니다.</p></div>
+							<div><p>"모르는 코드는 있어도 이해 못할 코드는 없다" 라는 생각을 갖고 있는 이것저것 좋아하는 개발자입니다.<br>개발 언어도 중요하지만 언어는 표현의 수단이라고 생각합니다.<br>제 생활에 도움되는 재미를 주는 편이한 서비스를 만들고 싶습니다..<br>그래서 세상 많은 사람들에게 편이한 서비스, 프로그램을 제공하여 다 같이 편이해지고 싶은 꿈을 갖고 있는 개발자입니다.</p></div>
 						</section>
 					</section>
 
@@ -635,6 +635,7 @@ ul.courses li:hover {
 								<li>jenkins</li>
 								<li>coverity</li>
 								<li>unity</li>
+								<li>aws</li>
 							</ul>
 						</div>
 						<div class="item">
@@ -642,10 +643,11 @@ ul.courses li:hover {
 								Back-end
 							</h3>
 							<ul class="keywords">
+								<li>golang</li>
 								<li>python</li>
 								<li>django</li>
-								<li>celery</li>
 								<li>graphQL</li>
+								<li>docker</li>
 								<li>docker</li>
 							</ul>
 						</div>
@@ -665,7 +667,7 @@ ul.courses li:hover {
 
 				<section class="section">
 					<header>
-						<h2 class='section-title'>Experience <span class="item-count">(2)</span></h2>
+						<h2 class='section-title'>Experience <span class="item-count">(4)</span></h2>
 					</header>
 					<section id="work">
 						<header class="clear">
@@ -695,20 +697,29 @@ ul.courses li:hover {
 					    <div class="item display" style="opacity: 1.08;">
 					        <div class="summary">
 					            <p></p><p>
-									<!-- Python을 기반으로 Blockchain-PG 서비스를 위한 백엔드 서버를 개발했습니다.<br> -->
+									오픈 소스(JANUS, NGINX) 를 이용하여 WEBRTC 스트리밍 서비스와 RTMP-HLS 스트리밍 서비스를 구축 및 유지보수 했습니다.
+									인프라 구성요소는 AWS 위에서 진행하였고 Dockerize 화 하여 관리했습니다.
 								</p><p></p>
 							</div>
 							<details open>
-								<!-- <summary><span style="font-weight:bold; line-height: 25px;"><a target='_blank' href="https://www.egbmining.org/">EGBMining</a></span></summary>
+								<summary><span style="font-weight:bold; line-height: 25px;"><a target='_blank' href="https://www.spooncast.net/kr/live">WEBRTC </a></span></summary>
 								<ul class="highlights">
-									<li><p>Python-Django 기반의 Back-end 를 개발했습니다.</p></li>
-									<li><p>AWS-EC2,S3,RDS(Aurora) 를 이용하여 환경 구축했습니다.</p></li>
-									<li><p>빌드 자동 및 서버 적용을 위해 Jenkins 를 이용했습니다.</p></li>
-									<li><p>Vue.js 기반의 Front-end 와 GraphQL 를 사용했고 apollo 를 사용했습니다.</p></li>
-									<li><p>GraphQL 2^n 의 특징을 풀기위해 DB 역정규화를 진행했습니다.</p></li>
-									<li><p>비동기 처리를 위하여 RabbitMQ/Celery 를 사용했습니다</p></li>
+									<li><p>WEBRTC 웹/AND/IOS 간의 실시간 스트리밍 서비스의 서버를 Golang으로 개발했습니다.</p></li>
+									<li><p>WEBRTC Signaling 프로토콜 서버를 Golang 으로 개발 했습니다. (websocket server)</p></li>
+									<li><p>WEBRTC 서버로 SFU(JANUS) 방식을 채택하여 구성했습니다.</p></li>
+									<li><p>WEBRTC 로 여러 명이 대화한것을 <a target='_blank' href="https://www.spooncast.net/kr/cast">녹음</a>하여 하나의 파일로 취합 및 모든 WEB BROWER 에서 청취 가능한 프로세스를 Golang 으로 개발했습니다.</br>JANUS-PP-REC/FFMPEG 을 이용하여 MJR(OPUS) to MP4</p></li>
+									<li><p>Auto Scaling 이 가능하도록 구조화 하였고 Load Balancing 컨트롤 서버를 Golang 으로 개발했습니다.</p></li>
 								</ul>
-								</br> -->
+								</br>
+							</details>
+							<details>
+								<summary><span style="font-weight:bold; line-height: 25px;"><a target='_blank' href="https://www.spooncast.net/kr/live">RTMP-HLS</a></span></summary>
+								<ul class="highlights">
+									<li><p>NGINX RTMP HLS 오픈소스를 이용하여 서비스를 구축 및 유지보수 했습니다.</p></li>
+									<li><p>HLS Upstream 서비스를 (Golang) 구축 및 유지보수 했습니다.</p></li>
+									<li><p>SPOON 서비스와 연동을 위해 WebServer 를 (Golang) 을 구축했습니다.</p></li>
+								</ul>
+								</br>
 							</details>
 							
 				        </div>
